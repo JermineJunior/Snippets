@@ -2,6 +2,7 @@
 @slot('title')
     create
 @endslot
+
 <div class="w-full bg-white px-16 py-8">
     <h1 class="text-2xl">New Snippet</h1>
     <form action="/snippets" method="POST">
@@ -12,6 +13,14 @@
         <div class="form-group">
             <label for="title" class="text-gray-800 font-semibold mt-2">Title</label>
         <input type="text" name="title" class="form-control" value="{{$snippet->title}}">
+        </div>
+        <div class="form-group">
+            <label for="tag_id" class="text-gray-800 font-semibold mt-2">Category</label>
+        <select name="tag_id" id="" class="form-control">
+            @foreach ($tags as $tag)
+                 <option value="{{$tag->id}}">{{$tag->name}}</option>
+            @endforeach
+        </select>
         </div>
         <div class="form-group">
             <label for="body" class="text-gray-800 font-semibold mt-2 ">body</label>

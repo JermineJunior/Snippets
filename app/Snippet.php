@@ -4,9 +4,9 @@ namespace App;
 
 class Snippet extends Model
 {
-    public function path()
+    public function path()  
     {
-        return '/snippets/'.$this->id;
+        return '/snippets/'.$this->tag->slug.'/'.$this->id;
     }
 
     public function forks()
@@ -22,5 +22,10 @@ class Snippet extends Model
     public function isAFork()
     {
         return  $this->originalSnippet;
+    }
+
+    public function tag()
+    {
+        return $this->belongsTo('App\Tag'::class,'tag_id'); 
     }
 }

@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateSnippetsTable extends Migration
+class CreateTagsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,10 @@ class CreateSnippetsTable extends Migration
      */
     public function up()
     {
-        Schema::create('snippets', function (Blueprint $table) {
+        Schema::create('tags', function (Blueprint $table) {
             $table->increments('id');
-            $table->unsignedInteger('tag_id');
-            $table->integer('forked_id')->nullable();
-            $table->string('title');
-            $table->text('body');
+            $table->string('name',50);
+            $table->string('slug',50);
             $table->timestamps();
         });
     }
@@ -30,6 +28,6 @@ class CreateSnippetsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('snippets');
+        Schema::dropIfExists('tags');
     }
 }

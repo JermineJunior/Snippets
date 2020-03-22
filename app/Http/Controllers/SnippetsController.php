@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Snippet;
+use App\Tag;
 use Illuminate\Http\Request;
 
 class SnippetsController extends Controller
@@ -10,14 +11,15 @@ class SnippetsController extends Controller
     
     public function index()
     {
-        $snippets = Snippet::latest()->get();
+        $snippets = Snippet::all();
         return view('snippets.index',compact('snippets'));
     }
 
     
     public function create(Snippet $snippet)
     {
-        return view('snippets.create',compact('snippet'));
+        $tags = Tag::all();
+        return view('snippets.create',compact('snippet','tags'));
     }
 
    
@@ -30,13 +32,14 @@ class SnippetsController extends Controller
         Snippet::create([
           'title'       => request('title'),
           'body'        => request('body'),
+          'tag_id'      => request('tag_id'),
           'forked_id'   =>request('forked_id')
         ]);
         return redirect('/');
     }
 
    
-    public function show(Snippet $snippet)
+    public function show($tag_id,Snippet $snippet)
     {
         return view('snippets.show',compact('snippet'));
     }
