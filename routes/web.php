@@ -17,7 +17,7 @@ Route::get('/snippets/{slug}/{snippet}','SnippetsController@show');
 Route::post('/snippets','SnippetsController@store');
 Route::post('/snippets/{snippet}','SnippetsController@update');
 Route::delete('/snippets/{snippet}','SnippetsController@destroy');
-Route::get('/snippets/{snippet}/fork','SnippetsController@create');
+Route::get('/snippets/{slug}/{snippet}/fork','SnippetsController@create');
 
 
 

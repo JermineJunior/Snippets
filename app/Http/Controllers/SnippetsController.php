@@ -16,7 +16,7 @@ class SnippetsController extends Controller
     }
 
     
-    public function create(Snippet $snippet)
+    public function create($tag_id = null,Snippet $snippet)
     {
         $tags = Tag::all();
         return view('snippets.create',compact('snippet','tags'));

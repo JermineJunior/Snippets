@@ -10,13 +10,19 @@
                text-decoration: none;
                color: teal;
 			}
+			.hero{
+				background-image: url('{{asset('images/bg.jpg')}}');
+                background-size:cover;
+				height:20rem;
+
+			}
 		</style>
 	</head>
 	<body class="bg-gray-200">
-		<section class="bg-teal-500 h-64">
+		<section class="bg-teal-500 hero">
             <div class="body">
 				<div class="container ml-12 py-20">
-					<h1 class="text-5xl text-gray-300">
+					<h1 class="text-5xl text-gray-300	">
                         <a href="/" class="hover:no-underline">Snippets</a>
 					</h1>
 
