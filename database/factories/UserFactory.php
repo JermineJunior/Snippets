@@ -24,3 +24,10 @@ $factory->define(User::class, function (Faker $faker) {
         'remember_token' => Str::random(10),
     ];
 });
+$factory->define(App\Snippet::class, function (Faker $faker) {
+    return [
+       'title'  => $faker->sentence(1),
+       'tag_id'  =>2,
+       'body'    =>$faker->paragraph(2)
+    ];
+});
