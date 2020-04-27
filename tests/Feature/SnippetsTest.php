@@ -10,7 +10,8 @@ use Illuminate\Foundation\Testing\DatabaseMigrations;
 
 class SnippetsTest extends TestCase
 {
- //use RefreshDatabase;
+    use RefreshDatabase;
+
     /**
      * A basic feature test example.
      *
@@ -18,8 +19,8 @@ class SnippetsTest extends TestCase
      */
     public function testExample()
     {
-        $snippet = factory('App\Snippet')->create();
-        $this->withExceptionHandling();
+        // $snippet = factory('App\Snippet')->create();
+        // $this->withExceptionHandling();
         $response = $this->get('/');
 
         $response->assertSee($snippet->title);
