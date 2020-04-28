@@ -6,7 +6,7 @@ class Snippet extends Model
 {
     public function path()  
     {
-        return '/snippets/'.$this->tag->slug.'/'.$this->id;
+        return '/snippets/{$this->tag->slug}/{$this->id}';
     }
 
     public function forks()
