@@ -23,7 +23,7 @@
             <div class="body">
 				<div class="container ml-12 py-20">
 					<h1 class="text-5xl text-gray-300	">
-                        <a href="/" class="hover:no-underline">Snippets</a>
+                        <a href="{{ route('home') }}" class="hover:no-underline">Snippets</a>
 					</h1>
 
 					<h2 class="mx-2 text-gray-200 text-sm tracking-wide">
@@ -31,8 +31,8 @@
 					</h2>
 
 					<p class="mt-4 text-800">
-						<a href="snippets/create " class="bg-gray-100 rounded p-3">
-							create snippet
+						<a href="{{ route('snippet.add') }}" class="bg-gray-100 rounded p-3">
+							create a snippet
 						</a>
 					</p>
 				</div>

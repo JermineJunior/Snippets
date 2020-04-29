@@ -5,7 +5,7 @@
 
 <div class="w-full bg-white px-16 py-8">
     <h1 class="text-2xl">New Snippet</h1>
-    <form action="/snippets" method="POST">
+    <form action="{{ route('snippet.store') }}" method="POST">
         @csrf
             @if($snippet->id)
                 <input type="hidden" name="forked_id" value="{{$snippet->id}}">
