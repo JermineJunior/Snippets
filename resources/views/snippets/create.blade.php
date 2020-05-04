@@ -1,6 +1,6 @@
 @component('layout')
 @slot('title')
-    create
+    create | snippet
 @endslot
 
 <div class="w-full bg-white px-16 py-8">
@@ -9,7 +9,7 @@
         @csrf
             @if($snippet->id)
                 <input type="hidden" name="forked_id" value="{{$snippet->id}}">
-            @endif    
+            @endif
         <div class="form-group">
             <label for="title" class="text-gray-800 font-semibold mt-2">Title</label>
         <input type="text" name="title" class="form-control" value="{{$snippet->title}}">

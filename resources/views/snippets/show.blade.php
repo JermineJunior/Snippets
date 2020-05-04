@@ -28,9 +28,7 @@
         @endif
         @if ($snippet->forks->count())
             <hr>
-            <h4 class="text-xl text-teal-500 mt-2">
-                   Forks
-            </h4>
+            <h4 class="text-xl text-teal-500 mt-2">Forks</h4>
             <ol>
                 @foreach ($snippet->forks as $fork)
                 <li>
@@ -42,7 +40,6 @@
             </ol>
         @endif
     </article>
-
 </div>
 
 @endcomponent

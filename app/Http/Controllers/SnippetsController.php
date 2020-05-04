@@ -8,21 +8,21 @@ use Illuminate\Http\Request;
 
 class SnippetsController extends Controller
 {
-    
+
     public function index()
     {
         $snippets = Snippet::all();
         return view('snippets.index',compact('snippets'));
     }
 
-    
+
     public function create($tag_id = null,Snippet $snippet)
     {
         $tags = Tag::all();
         return view('snippets.create',compact('snippet','tags'));
     }
 
-   
+
     public function store(Snippet $snippet)
     {
         $this->validate(request(),[
@@ -38,27 +38,10 @@ class SnippetsController extends Controller
         return redirect('/');
     }
 
-   
+
     public function show($tag_id,Snippet $snippet)
     {
         return view('snippets.show',compact('snippet'));
     }
 
-  
-    public function edit(Snippet $snippet)
-    {
-        //
-    }
-
-    
-    public function update(Snippet $snippet)
-    {
-        //
-    }
-
-    
-    public function destroy(Snippet $snippet)
-    {
-        //
-    }
 }

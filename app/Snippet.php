@@ -1,10 +1,10 @@
 <?php
 
 namespace App;
-
+use App\Tag;
 class Snippet extends Model
 {
-    public function path()  
+    public function path()
     {
         return '/snippets/{$this->tag->slug}/{$this->id}';
     }
@@ -26,6 +26,6 @@ class Snippet extends Model
 
     public function tag()
     {
-        return $this->belongsTo('App\Tag'::class,'tag_id'); 
+        return $this->belongsTo(Tag::class,'tag_id');
     }
 }

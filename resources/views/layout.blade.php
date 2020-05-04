@@ -3,7 +3,7 @@
 	<head>
 		<meta charset="UTF-8">
 	<title>{{$title}}</title>
-	    <link rel="stylesheet" href="{{asset('css/main.css')}}">
+	  <link rel="stylesheet" href="{{asset('css/main.css')}}">
 		<link rel="stylesheet" href="{{asset('css/app.css')}}">
 		<style>
 			a:hover{
