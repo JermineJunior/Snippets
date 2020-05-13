@@ -28,4 +28,9 @@ class Snippet extends Model
     {
         return $this->belongsTo(Tag::class,'tag_id');
     }
+
+    public function addSnippet($snippet)
+    {
+      $this->create($snippet);
+    }
 }

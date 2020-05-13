@@ -2,9 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use App\Snippet;
-use App\Tag;
-use Illuminate\Http\Request;
+use App\{Snippet , Tag};
+use App\Http\Requests\CreateSnippetRequest;
 
 class SnippetsController extends Controller
 {
@@ -23,19 +22,12 @@ class SnippetsController extends Controller
     }
 
 
-    public function store(Snippet $snippet)
+    public function store(CreateSnippetRequest $form,Snippet $snippet)
     {
-        $this->validate(request(),[
-            'title' => 'required',
-            'body'  =>  'required'
-        ]);
-        Snippet::create([
-          'title'       => request('title'),
-          'body'        => request('body'),
-          'tag_id'      => request('tag_id'),
-          'forked_id'   =>request('forked_id')
-        ]);
-        return redirect('/');
+       return redirect(
+           '/',
+           $form->persist($snippet)
+       );
     }
 
 
